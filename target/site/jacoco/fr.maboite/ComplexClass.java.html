@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ComplexClass.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Java avancé en PRF !</a> &gt; <a href="index.source.html" class="el_package">fr.maboite</a> &gt; <span class="el_source">ComplexClass.java</span></div><h1>ComplexClass.java</h1><pre class="source lang-java linenums">package fr.maboite;
+
+/**
+ * Classe complexe (inutilement)
+ *
+ */
+<span class="nc" id="L7">public class ComplexClass {</span>
+
+	/**
+	 * Renvoie si number est pair
+	 * @param number
+	 * @return
+	 */
+	public boolean estPair(int number) {
+<span class="nc bnc" id="L15" title="All 2 branches missed.">		if (number == 0) {</span>
+<span class="nc" id="L16">			return true;</span>
+		}
+<span class="nc bnc" id="L18" title="All 2 branches missed.">		if (number == 2) {</span>
+<span class="nc" id="L19">			return true;</span>
+<span class="nc bnc" id="L20" title="All 2 branches missed.">		} else if (number == 4) {</span>
+<span class="nc" id="L21">			return true;</span>
+<span class="nc bnc" id="L22" title="All 2 branches missed.">		} else if (number == 6) {</span>
+<span class="nc" id="L23">			return true;</span>
+		}
+
+<span class="nc bnc" id="L26" title="All 2 branches missed.">		if (number == 8) {</span>
+<span class="nc" id="L27">			return true;</span>
+		}
+<span class="nc" id="L29">		boolean isPair = false;</span>
+<span class="nc bnc" id="L30" title="All 5 branches missed.">		switch (number) {</span>
+		case 10:
+<span class="nc" id="L32">			isPair = true;</span>
+<span class="nc" id="L33">			break;</span>
+		case 12:
+<span class="nc" id="L35">			isPair = true;</span>
+<span class="nc" id="L36">			break;</span>
+		case 14:
+<span class="nc" id="L38">			isPair = true;</span>
+<span class="nc" id="L39">			break;</span>
+		case 16:
+<span class="nc" id="L41">			isPair = true;</span>
+			break;
+		}
+<span class="nc bnc" id="L44" title="All 2 branches missed.">		if (isPair) {</span>
+<span class="nc" id="L45">			return true;</span>
+		}
+
+<span class="nc bnc" id="L48" title="All 2 branches missed.">		for (int i = 0; i &lt; 3; i++) {</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">			for (int j = 0; j &lt; 3; j++) {</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">				for (int k = 0; k &lt; 3; k++) {</span>
+<span class="nc" id="L51">					int result = 100 * i + 10 * j + k;</span>
+				}
+			}
+		}
+
+<span class="nc bnc" id="L56" title="All 2 branches missed.">		if (!isPair) {</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">			return number % 2 == 0;</span>
+		}
+		
+<span class="nc" id="L60">		return false;</span>
+	}
+	
+
+	public void afficheParite() {
+<span class="nc bnc" id="L65" title="All 2 branches missed.">		for (int i = 0; i &lt; 10; i++) {</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">			for (int j = 0; j &lt; 10; j++) {</span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">				if (i % 2 == 0) {</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">					if (j % 2 == 0) {</span>
+<span class="nc" id="L69">						System.out.println(&quot;i et j sont pairs&quot;);</span>
+					} else {
+<span class="nc" id="L71">						System.out.println(&quot;i est pair et j est impair&quot;);</span>
+					}
+				} else {
+<span class="nc bnc" id="L74" title="All 2 branches missed.">					if (j % 2 == 0) {</span>
+<span class="nc" id="L75">						System.out.println(&quot;i est impair et j est pair&quot;);</span>
+					} else {
+<span class="nc" id="L77">						System.out.println(&quot;i et j sont impairs&quot;);</span>
+					}
+				}
+
+			}
+		}
+<span class="nc" id="L83">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

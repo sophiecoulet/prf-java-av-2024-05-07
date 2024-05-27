@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Horoscope.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Java avancé en PRF !</a> &gt; <a href="index.source.html" class="el_package">fr.maboite</a> &gt; <span class="el_source">Horoscope.java</span></div><h1>Horoscope.java</h1><pre class="source lang-java linenums">package fr.maboite;
+
+import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+<span class="nc" id="L8">public class Horoscope {</span>
+
+<span class="nc" id="L10">	private String[] sentencePart1 = { &quot;Vous allez &quot;, &quot;Il faudra &quot;, &quot;Ne tentez pas de &quot; };</span>
+<span class="nc" id="L11">	private String[] sentencePart2 = { &quot; manger &quot;, &quot; réveiller &quot;, &quot; saluer &quot; };</span>
+<span class="nc" id="L12">	private String[] sentencePart3 = { &quot; un oeuf au plat.&quot;, &quot; un gladiateur.&quot;, &quot; une chaise de bureau&quot; };</span>
+
+<span class="nc" id="L14">	private Map&lt;LocalDate, String&gt; horoscopes = new HashMap&lt;&gt;();</span>
+
+	public void generateHoroscope(LocalDate day) {
+<span class="nc" id="L17">		cleanHoroscope();</span>
+<span class="nc" id="L18">		this.horoscopes.put(day, generateSentence());</span>
+<span class="nc" id="L19">	}</span>
+
+	private String generateSentence() {
+<span class="nc" id="L22">		String sentence1 = this.sentencePart1[(int) (Math.random() * 3)];</span>
+<span class="nc" id="L23">		String sentence2 = this.sentencePart2[(int) (Math.random() * 3)];</span>
+<span class="nc" id="L24">		String sentence3 = this.sentencePart3[(int) (Math.random() * 3)];</span>
+<span class="nc" id="L25">		return sentence1 + sentence2 + sentence3;</span>
+	}
+
+	public void cleanHoroscope() {
+<span class="nc bnc" id="L29" title="All 2 branches missed.">		if (this.horoscopes.size() == 7) {</span>
+			// this.horoscopes.clear();
+<span class="nc bnc" id="L31" title="All 2 branches missed.">			for (String sentenceString : this.horoscopes.values()) {</span>
+<span class="nc" id="L32">				sentenceString = null;</span>
+<span class="nc" id="L33">			}</span>
+		}
+<span class="nc" id="L35">	}</span>
+
+	public static void main(String[] args) {
+<span class="nc" id="L38">		System.out.println(&quot;Appuyer sur une touche pour démarrer la génération&quot;);</span>
+<span class="nc" id="L39">		try (Scanner scanner = new Scanner(System.in)) {</span>
+<span class="nc" id="L40">			scanner.nextLine();</span>
+<span class="nc" id="L41">			LocalDate date = LocalDate.now();</span>
+<span class="nc" id="L42">			Horoscope horoscope = new Horoscope();</span>
+			while (true) {
+<span class="nc" id="L44">				horoscope.generateHoroscope(date);</span>
+<span class="nc" id="L45">				date = date.plusDays(1);</span>
+			}
+		}
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
