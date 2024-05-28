@@ -4,7 +4,14 @@ public class Factorial {
 
 	public Integer compute(int i) {
 		// TODO Auto-generated method stub
-		return null;
-	}
+		if (i <= 0){
+			return 1;
+		}
+		int fact = 1;
+		for (int j = 1; j <= i; j++) {
+			fact = fact * j;
+		}
+        return fact;
+    }
 
 }
