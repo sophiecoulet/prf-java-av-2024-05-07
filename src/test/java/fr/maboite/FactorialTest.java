@@ -1,7 +1,9 @@
 package fr.maboite;
 
+import org.junit.jupiter.api.Assertions;
+
 public class FactorialTest {
-	/*
+	
 	public void test0() {
 		Factorial factorial = new Factorial();
 		Assertions.assertEquals(1, factorial.compute(0));
@@ -36,6 +38,6 @@ public class FactorialTest {
 		Factorial factorial = new Factorial();
 		Assertions.assertEquals(479_001_600, factorial.compute(12));
 	}
-	*/
+	
 
 }

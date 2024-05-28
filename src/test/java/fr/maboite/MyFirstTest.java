@@ -2,6 +2,9 @@ package fr.maboite;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -18,18 +21,28 @@ public class MyFirstTest {
 	public void beforeEach() {
 		System.out.println("before each");
 	}
+	
+	@AfterAll
+	public static void afterAll() {
+		System.out.println("after all");
+	}
+
+	@AfterEach
+	public void afterEach() {
+		System.out.println("after each");
+	}
 
 	@Test
 	public void testSuccess() {
 		int expectedValue = 4;
 		int computedValue = 2 + 2;
-		assertEquals(expectedValue, computedValue);
+		Assertions.assertEquals(expectedValue, computedValue);
 	}
 
 	@Test
-	@Disabled
+	//@Disabled
 	public void testFailure() {
-		//assertEquals(3, 2);
+		assertEquals(3, 2);
 	}
 
 }
