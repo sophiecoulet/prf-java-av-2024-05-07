@@ -14,6 +14,7 @@ public class Horoscope {
 	private Map<LocalDate, String> horoscopes = new HashMap<>();
 
 	public void generateHoroscope(LocalDate day) {
+		System.out.println("day : " + day);
 		cleanHoroscope();
 		this.horoscopes.put(day, generateSentence());
 	}
@@ -25,6 +26,7 @@ public class Horoscope {
 		return sentence1 + sentence2 + sentence3;
 	}
 
+	@SuppressWarnings("unused")
 	public void cleanHoroscope() {
 		if (this.horoscopes.size() == 7) {
 			// this.horoscopes.clear();
